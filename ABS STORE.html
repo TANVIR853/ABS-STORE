@@ -1,44 +1,67 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আমার ওয়েবসাইট</title>
+    <title>ABS STORE</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px 0;
-        }
-        a {
-            text-decoration: none;
-            color: white;
-            background-color: blue;
+        body { text-align: center; font-family: Arial, sans-serif; padding-top: 50px; }
+        .container { max-width: 400px; margin: auto; }
+        .button {
+            display: block;
+            background-color: #4CAF50;
+            color: #fff;
             padding: 10px 20px;
+            margin: 10px 0;
+            text-decoration: none;
             border-radius: 5px;
-            display: inline-block;
+            cursor: pointer;
         }
-        a:hover {
-            background-color: darkblue;
-        }
+        .button:hover { background-color: #45a049; }
+        .hidden { display: none; }
+        .link-list { list-style: none; padding: 0; }
+        .link-list li { margin: 10px 0; }
+        .link { color: #1a73e8; text-decoration: none; }
+        .link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <h1>আমার ওয়েবসাইটে স্বাগতম</h1>
-    <p>নিচের লিংকগুলোতে ক্লিক করে বিভিন্ন পেজ খুলতে পারো:</p>
+    <div class="container">
+        <img src="ABS TEAM LOGO.webp" alt="ABS STORE" width="200">
+        <h1>Welcome to ABS STORE</h1>
+        <abs1>DEVOLOPED BY ABU BOKKOR SIDDIQUE</abs1>
 
-    <ul>
-        <li><a href="https://drive.google.com/file/d/1_zF4uNx5gw5k16Ai1cSqL5JQg1qEQvm7/view?usp=drive_link" target="_blank">গুগল</a></li>
-        <li><a href="https://drive.google.com/file/d/1_zF4uNx5gw5k16Ai1cSqL5JQg1qEQvm7/view?usp=drive_link" target="_blank">ইউটিউব</a></li>
-        <li><a href="https://www.facebook.com" target="_blank">ফেসবুক</a></li>
-        <li><a href="https://www.wikipedia.org" target="_blank">উইকিপিডিয়া</a></li>
-    </ul>
+        <button class="button" onclick="showLinks('windows')">For Windows</button>
+        <button class="button" onclick="showLinks('android')">For Android</button>
+
+        <div id="windowsLinks" class="hidden">
+            <h2>Windows Downloads</h2>
+            <ul class="link-list">
+                <li><a href="https://drive.google.com/file/d/1_zF4uNx5gw5k16Ai1cSqL5JQg1qEQvm7/view?usp=drive_link" class="link" target="_blank">TEXT TO VOICE CONVERTER(9/3/20\25)</a></li>
+                <!--<li><a href="#" class="link">Download Link 2</a></li>-->
+                <!--<li><a href="#" class="link">Download Link 3</a></li>-->
+            </ul>
+        </div>
+
+        <div id="androidLinks" class="hidden">
+            <h2>Android Downloads</h2>
+            <ul class="link-list">
+                <!--<li><a href="https://example.com/android-download-1" class="link" target="_blank">Download Link 1</a></li>-->
+                <!--<li><a href="#" class="link">Download Link 2</a></li>-->
+                <!--<li><a href="#" class="link">Download Link 3</a></li>-->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function showLinks(type) {
+            document.getElementById("windowsLinks").classList.add("hidden");
+            document.getElementById("androidLinks").classList.add("hidden");
+
+            if (type === "windows") {
+                document.getElementById("windowsLinks").classList.remove("hidden");
+            } else if (type === "android") {
+                document.getElementById("androidLinks").classList.remove("hidden");
+            }
+        }
+    </script>
 </body>
 </html>
